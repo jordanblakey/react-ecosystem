@@ -3,7 +3,6 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "flow-remove-types src/ -d lib/",
-    "prepublish": "npm run build",
     "flow": "flow",
     "start": "webpack --config webpack.config.js",
     "storybook": "start-storybook -p 6006",

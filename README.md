@@ -10,10 +10,10 @@ Learning about the React Ecosystem by bringing together:
 - ESLint
 - Redux
 - React Router
+- Yarn
 
 ## Coming Soon
 
-- Yarn
 - Husky
 - Prettier
 
