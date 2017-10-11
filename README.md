@@ -2,7 +2,6 @@
 
 Learning about the React Ecosystem by bringing together:
 
-- Yarn
 - Storybook
 - Babel
 - Webpack
@@ -13,6 +12,8 @@ Learning about the React Ecosystem by bringing together:
 - React Router
 
 ## Coming Soon
+
+- Yarn
 - Husky
 - Prettier
 
@@ -72,11 +73,14 @@ Learning about the React Ecosystem by bringing together:
 `create-react-app .`<br>
 `npm install -g create-react-app`<br>
 `npm i --save-dev enzyme enzyme-adapter-react-16`<br>
+`npm install --save redux react-redux redux-devtools`<br>
+`npm install --save-dev react-router react-router-dom`<br>
+`npm install --save-dev babel-jest regenerator-runtime`<br>
 
 ### Redux Explained:
 
-The whole state of your app is stored in an object tree inside a single store.
-The only way to change the state tree is to emit an action, an object describing what happened.
-To specify how the actions transform the state tree, you write pure reducers.
+- The whole state of your app is stored in an object tree inside a single store.
+- The only way to change the state tree is to emit an action, an object describing what happened.
+- To specify how the actions transform the state tree, you write pure reducers.
 
 That's it!
