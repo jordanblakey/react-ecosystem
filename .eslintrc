@@ -23,6 +23,7 @@
     "browser": true, // browser global variables.
     "node": true, // Node.js global variables and Node.js-specific rules.
     "amd": true, // defines require() and define() as global variables as per the amd spec.
+    "jest": true,
     "es6": true,
     "mocha": false, // adds all of the Mocha testing global variables.
     "jasmine": false, // adds all of the Jasmine testing global variables for version 1.3 and 2.0.
@@ -35,6 +36,7 @@
   "globals": {
     // e.g. "angular": true
   },
+  "parser": "babel-eslint",
 
   "parserOptions": {
     "ecmaVersion": 6,
@@ -45,10 +47,15 @@
   },
 
   "plugins": [
-    "react" // e.g. "react" (must run `npm install eslint-plugin-react` first)
+    "react", // e.g. "react" (must run `npm install eslint-plugin-react` first)
+    "flowtype"
   ],
 
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ],
 
 
   "rules": {
@@ -288,7 +295,31 @@
     "react/jsx-tag-spacing": 0, // Validate whitespace in and around the JSX opening and closing brackets (fixable)
     "react/jsx-uses-react": 1, // Prevent React to be incorrectly marked as unused
     "react/jsx-uses-vars": 1, // Prevent variables used in JSX to be incorrectly marked as unused
-    "react/jsx-wrap-multilines": 1 // Prevent missing parentheses around multilines JSX (fixable)
+    "react/jsx-wrap-multilines": 1, // Prevent missing parentheses around multilines JSX (fixable)
 
+    "flowtype/boolean-style": [ 2, "boolean" ],
+    "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": [ 2, "never" ],
+    "flowtype/generic-spacing": [ 2, "never" ],
+    "flowtype/no-primitive-constructor-types": 2,
+    "flowtype/no-types-missing-file-annotation": 2,
+    "flowtype/no-weak-types": 2,
+    "flowtype/object-type-delimiter": [ 2, "comma" ],
+    "flowtype/require-parameter-type": 2,
+    "flowtype/require-return-type": [ 2, "always", { "annotateUndefined": "never" } ],
+    "flowtype/require-valid-file-annotation": 2,
+    "flowtype/semi": [ 2, "always" ],
+    "flowtype/space-after-type-colon": [ 2, "always" ],
+    "flowtype/space-before-generic-bracket": [ 2, "never" ],
+    "flowtype/space-before-type-colon": [ 2, "never" ],
+    "flowtype/type-id-match": [ 2, "^([A-Z][a-z0-9]+)+Type$" ],
+    "flowtype/union-intersection-spacing": [ 2, "always" ],
+    "flowtype/use-flow-type": 1,
+    "flowtype/valid-syntax": 1
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
   }
 }

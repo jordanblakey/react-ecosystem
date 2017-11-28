@@ -1,11 +1,14 @@
+import React from 'react';
+import { render } from 'react-dom';
+import axios from 'axios';
+import { routes } from './routes';
+import './styles/general.css';
+import './styles/animations.css';
 
-function component() {
-  const element = document.createElement('div');
+// Some basic axios setup.
+axios.defaults.baseURL = 'http://localhost:3001';
+const responseToBody = ({data}) => data;
+// Convert all response directly to data/JSON
+axios.interceptors.response.use(responseToBody);
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+render(routes, document.querySelector('#root'));
